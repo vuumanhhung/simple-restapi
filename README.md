@@ -1,6 +1,5 @@
 # simple-restapi
 @hungdentutuonglai
-# rest-api-worker
 
 REST API chạy trên Cloudflare Workers, dữ liệu lưu ở D1 (SQLite).
 
