@@ -1,0 +1,21 @@
+name = "rest-api-worker"
+main = "src/index.js"
+compatibility_date = "2025-09-01"
+
+# Binding tới D1. Thay database_id bằng id thật mà `wrangler d1 create` in ra.
+[[d1_databases]]
+binding = "DB"
+database_name = "api-worker-db"
+database_id = "REPLACE_WITH_YOUR_DATABASE_ID"
+
+[vars]
+# Đổi thành domain thật khi deploy, ví dụ "https://app.example.com".
+# Để "*" thì mọi trang web đều gọi được API này từ trình duyệt.
+ALLOWED_ORIGIN = "*"
+
+# API_KEY KHÔNG đặt ở đây — [vars] được commit vào git.
+# Dùng secret: wrangler secret put API_KEY
+# Khi chạy local, wrangler dev đọc từ file .dev.vars (đã nằm trong .gitignore).
+
+[observability]
+enabled = true
